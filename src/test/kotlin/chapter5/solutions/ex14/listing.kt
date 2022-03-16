@@ -25,5 +25,10 @@ class Solution14 : WordSpec({
             Stream.of(1, 2, 3)
                 .startsWith(Stream.of(2, 3)) shouldBe false
         }
+        "detect if the prefix is longer than the original stream" {
+            Stream.of(1, 2, 3).startsWith(
+                Stream.of(1, 2, 3, 4)
+            ) shouldBe false
+        }
     }
 })
